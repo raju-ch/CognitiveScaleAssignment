@@ -1,0 +1,53 @@
+
+TASK 1 :
+
+Login Page URL : http://localhost:9000
+Note : Please run ModelsTest.java to insert the data into DB with command "activator test"
+
+TASK 2 :
+
+Create User API
+------------------
+URL : http://localhost:9000/createUser
+Request Body : 
+{
+	"name": "Raju",
+	"userName": "raju@1.com",
+	"password": "123"
+}
+Method : POST
+Content-Type : application/json
+Response :
+	Success :
+		{
+		"email": "raju@1.com",
+		"name": "Raju",
+		"password": "123"
+		}
+	Failure :
+		{
+			"status": "UNAUTHORIZED",
+			"message": "Access is denied"
+		}
+
+Authenticate User API
+------------------
+URL : http://localhost:9000/authenticate
+Request Body :
+{
+	"userName": "raju@1.com",
+	"password": "123"
+}
+Method : POST
+Content-Type : application/json
+Response :
+	Success :
+		{
+			"status": "OK",
+			"accessToken": "1074ac50-aa17-42bc-8ba0-eef2f3a0fe31"
+		}
+	Failure :
+		{
+			"status": "UNAUTHORIZED",
+			"message": "Access is denied"
+		}
